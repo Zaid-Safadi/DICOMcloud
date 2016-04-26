@@ -113,7 +113,7 @@
   <ItemGroup>
     <ProjectReference Include="..\DICOMcloud.Core\DICOMcloud.Core.csproj">
       <Project>{5627b6ef-610c-40c9-bdb2-6f4d77fcb23c}</Project>
-      <Name>CloudPacs</Name>
+      <Name>DICOMcloud.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
