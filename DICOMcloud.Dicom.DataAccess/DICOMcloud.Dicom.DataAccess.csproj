@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1B7C024B-F1B9-4B41-B6F9-FB26F7135EF0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DICOMcloud.Dicom.DataAccess</RootNamespace>
+    <AssemblyName>DICOMcloud.Dicom.DataAccess</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ClearCanvas.Dicom, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Resources\Bin\ClearCanvas.Dicom.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SqlXml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DB\Query\SqlJoinBuilder.cs" />
+    <Compile Include="DB\Schema\ColumnInfo.cs" />
+    <Compile Include="DB\Schema\DBSchemaProvider.cs" />
+    <Compile Include="DB\DicomSqlDataAdapter.cs" />
+    <Compile Include="DB\ObjectArchieveDsResponse.cs" />
+    <Compile Include="DB\ObjectArchieveBuilderBase.cs" />
+    <Compile Include="DB\Query\MatchBuilder.cs" />
+    <Compile Include="DB\Query\ObjectArchieveQueryBuilder.cs" />
+    <Compile Include="DB\ObjectArchieveStorageBuilder.cs" />
+    <Compile Include="DB\Query\JoinInfo.cs" />
+    <Compile Include="DB\Query\SqlQueries.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DB\Schema\DbSchemaSource.cs" />
+    <Compile Include="DB\Schema\PersonNameParts.cs" />
+    <Compile Include="DB\Schema\StorageDBSchemaProvider.cs" />
+    <Compile Include="DB\Schema\TableKey.cs" />
+    <Compile Include="DB\SqlDeleteStatments.cs" />
+    <Compile Include="DB\SqlInsertStatments.cs" />
+    <Compile Include="DicomDataParameter\DicomDataParameter.cs" />
+    <Compile Include="DicomDataParameter\DicomDataParameterFactory.cs" />
+    <Compile Include="DicomInstanceArchieveDataAccess.cs" />
+    <Compile Include="DicomDataParameter\IDicomDataParameter.cs" />
+    <Compile Include="DicomDataParameter\IDicomDataParameterFactory.cs" />
+    <Compile Include="IDicomInstnaceStorageDataAccess.cs" />
+    <Compile Include="IDicomStorageQueryDataAccess.cs" />
+    <Compile Include="IObjectArchieveResponseBuilder.cs" />
+    <Compile Include="Matching\Condition.cs" />
+    <Compile Include="Matching\ConditionFactory.cs" />
+    <Compile Include="Matching\IMatchingCondition.cs" />
+    <Compile Include="Matching\IQueryInfo.cs" />
+    <Compile Include="PersonNameData.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QueryOptions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DICOMcloud.Core\DICOMcloud.Core.csproj">
+      <Project>{5627b6ef-610c-40c9-bdb2-6f4d77fcb23c}</Project>
+      <Name>DICOMcloud.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DICOMcloud.Dicom\DICOMcloud.Dicom.csproj">
+      <Project>{65ed8720-92ca-400f-b967-343e3e13df8b}</Project>
+      <Name>DICOMcloud.Dicom</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DB\DatabaseSchema.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
