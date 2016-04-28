@@ -7,7 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DICOMcloud.Core", "DICOMclo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DICOMcloud.Core.Azure", "DICOMcloud.Core.Azure\DICOMcloud.Core.Azure.csproj", "{85C81265-CA86-4C3D-93B9-7AC54FCD20AF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DICOMcloud.Dicom", "DICOMcloud.Core.Dicom\DICOMcloud.Dicom.csproj", "{65ED8720-92CA-400F-B967-343E3E13DF8B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DICOMcloud.Dicom", "DICOMcloud.Dicom\DICOMcloud.Dicom.csproj", "{65ED8720-92CA-400F-B967-343E3E13DF8B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DICOMcloud.Pacs", "DICOMcloud.Pacs\DICOMcloud.Pacs.csproj", "{CF60BCFB-2AF3-400D-880D-2251D01AEC50}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DICOMcloud.Wado.Models", "DICOMcloud.Wado.Models\DICOMcloud.Wado.Models.csproj", "{EF4DFA7C-5361-4140-AC58-50DFD70F5159}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +31,14 @@ Global
 		{65ED8720-92CA-400F-B967-343E3E13DF8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{65ED8720-92CA-400F-B967-343E3E13DF8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{65ED8720-92CA-400F-B967-343E3E13DF8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF60BCFB-2AF3-400D-880D-2251D01AEC50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF60BCFB-2AF3-400D-880D-2251D01AEC50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF60BCFB-2AF3-400D-880D-2251D01AEC50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF60BCFB-2AF3-400D-880D-2251D01AEC50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF4DFA7C-5361-4140-AC58-50DFD70F5159}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF4DFA7C-5361-4140-AC58-50DFD70F5159}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF4DFA7C-5361-4140-AC58-50DFD70F5159}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF4DFA7C-5361-4140-AC58-50DFD70F5159}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
