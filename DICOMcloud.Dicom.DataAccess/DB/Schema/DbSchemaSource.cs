@@ -32,7 +32,6 @@ namespace DICOMcloud.Dicom.DataAccess.DB.Schema
             Columns = new ConcurrentDictionary<string, ColumnInfo> ( ) ;
             Tags    = new ConcurrentDictionary<uint, IList<ColumnInfo>>   ( ) ;
 
-            //TODO: replace from MedicalCo.Common 
             string schemaPath = GetSchemaFile ( ) ;
             XDocument schemaDoc = XDocument.Load ( schemaPath ) ;
 

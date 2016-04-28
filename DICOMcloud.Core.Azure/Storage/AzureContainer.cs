@@ -45,12 +45,6 @@ namespace DICOMcloud.Core.Azure.Storage
 
         public IEnumerable<IStorageLocation> GetLocations (string key )
         {
-            //foreach ( var blob in __Container.ListBlobs ( key, true, BlobListingDetails.All ) )
-            //{
-            //    if ( blob is CloudBlockBlob )
-            //    yield return new AzureLocation ( (CloudBlockBlob) blob ) ;
-            //}
-
             foreach (var blob in __Container.ListBlobs(key, true, BlobListingDetails.None).OfType<CloudBlockBlob>())
             {
                 yield return new AzureLocation(blob);

@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{55007666-7177-49CB-8577-80A013046A28}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DICOMcloud.Wado.Core</RootNamespace>
+    <AssemblyName>DICOMcloud.Wado.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ClearCanvas.Dicom">
+      <HintPath>..\..\Resources\Bin\ClearCanvas.Dicom.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MimeHandler\ImageObjectHandler.cs" />
+    <Compile Include="MimeHandler\IMimeResponseHandler.cs" />
+    <Compile Include="MimeHandler\IWadoRsMimeResponseCreator.cs" />
+    <Compile Include="MimeHandler\WadoResponseProcessorFactory.cs" />
+    <Compile Include="ModelBinders\RsObjectRequestModelBinder.cs" />
+    <Compile Include="ModelBinders\RsFrameRequestModelBinder.cs" />
+    <Compile Include="ModelBinders\QidoRequestModelBinder.cs" />
+    <Compile Include="ModelBinders\RsSeriesRequestModelBinder.cs" />
+    <Compile Include="ModelBinders\RsStudiesRequestModelBinder.cs" />
+    <Compile Include="ModelBinders\RsRequestModelConverter.cs" />
+    <Compile Include="ModelBinders\RsRequestModelBinder.cs" />
+    <Compile Include="MimeHandler\ObjectHandlerBase.cs" />
+    <Compile Include="MimeHandler\OtherObjectsHandler.cs" />
+    <Compile Include="ModelBinders\UriRequestModelBinder.cs" />
+    <Compile Include="ModelBinders\QidoRequestModelConverter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ModelBinders\UriRequestModelConverter.cs" />
+    <Compile Include="Services\IWadoRsSerivce.cs" />
+    <Compile Include="Services\QidoRsService.cs" />
+    <Compile Include="Services\WadoRsSerivce.cs" />
+    <Compile Include="Services\WadoUriService.cs" />
+    <Compile Include="MimeHandler\TextObjectHandler.cs" />
+    <Compile Include="Services\WebObjectStoreService.cs" />
+    <Compile Include="Types\DefaultDicomQueryElements.cs" />
+    <Compile Include="Types\IWadoResponseService.cs" />
+    <Compile Include="Types\WadoRequestHeader.cs" />
+    <Compile Include="Types\IWadoService.cs" />
+    <Compile Include="WadoResponse\RetieveUrlProvider.cs" />
+    <Compile Include="WadoResponse\WadoStoreResponse.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DICOMcloud.Core\DICOMcloud.Core.csproj">
+      <Project>{5627b6ef-610c-40c9-bdb2-6f4d77fcb23c}</Project>
+      <Name>DICOMcloud.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DICOMcloud.Dicom.DataAccess\DICOMcloud.Dicom.DataAccess.csproj">
+      <Project>{1b7c024b-f1b9-4b41-b6f9-fb26f7135ef0}</Project>
+      <Name>DICOMcloud.Dicom.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DICOMcloud.Dicom\DICOMcloud.Dicom.csproj">
+      <Project>{65ed8720-92ca-400f-b967-343e3e13df8b}</Project>
+      <Name>DICOMcloud.Dicom</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DICOMcloud.Pacs\DICOMcloud.Pacs.csproj">
+      <Project>{cf60bcfb-2af3-400d-880d-2251d01aec50}</Project>
+      <Name>DICOMcloud.Pacs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DICOMcloud.Wado.Models\DICOMcloud.Wado.Models.csproj">
+      <Project>{ef4dfa7c-5361-4140-ac58-50dfd70f5159}</Project>
+      <Name>DICOMcloud.Wado.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

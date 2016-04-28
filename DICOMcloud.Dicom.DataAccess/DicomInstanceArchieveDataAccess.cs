@@ -115,8 +115,8 @@ namespace DICOMcloud.Dicom.DataAccess
         public void StoreInstanceMetadata( IObjectID instance, string metadata ) 
         {
             DicomSqlDataAdapter dbAdapter = new DicomSqlDataAdapter ( ConnectionString ) ;
-            //TODO: use transation
-            //dbAdapter.CreateTransation ( ) 
+            //TODO: use transaction
+            //dbAdapter.CreateTransaction ( ) 
 
             var cmd = dbAdapter.CreateUpdateMetadataCommand ( instance, metadata ) ;
         
@@ -128,7 +128,7 @@ namespace DICOMcloud.Dicom.DataAccess
                 
                 if ( rowsInserted <= 0 )
                 { 
-                    //return duplicate instance?!!!
+                    //TODO: return duplicate instance?!!!
                 }
             }
             finally

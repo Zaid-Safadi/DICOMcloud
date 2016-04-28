@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace DICOMcloud.Core.Extensions
 {
-    //TODO: Move to MedicalCo.Common
     public static class CommonExtensions
     {
         public static string ToJson ( this object me )
