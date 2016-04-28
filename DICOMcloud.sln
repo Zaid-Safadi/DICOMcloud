@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DICOMcloud.Pacs", "DICOMclo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DICOMcloud.Wado.Models", "DICOMcloud.Wado.Models\DICOMcloud.Wado.Models.csproj", "{EF4DFA7C-5361-4140-AC58-50DFD70F5159}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DICOMcloud.Wado.Core", "DICOMcloud.Wado.Core\DICOMcloud.Wado.Core.csproj", "{55007666-7177-49CB-8577-80A013046A28}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{EF4DFA7C-5361-4140-AC58-50DFD70F5159}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EF4DFA7C-5361-4140-AC58-50DFD70F5159}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EF4DFA7C-5361-4140-AC58-50DFD70F5159}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55007666-7177-49CB-8577-80A013046A28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55007666-7177-49CB-8577-80A013046A28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55007666-7177-49CB-8577-80A013046A28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55007666-7177-49CB-8577-80A013046A28}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
