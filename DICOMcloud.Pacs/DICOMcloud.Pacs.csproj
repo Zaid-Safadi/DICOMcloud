@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CF60BCFB-2AF3-400D-880D-2251D01AEC50}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DICOMcloud.Pacs</RootNamespace>
+    <AssemblyName>DICOMcloud.Pacs</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ClearCanvas.Dicom, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Resources\Bin\ClearCanvas.Dicom.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CommandEvents\DicomStoreSuccessEventArgs.cs" />
+    <Compile Include="Commands\DeleteCommand.cs" />
+    <Compile Include="Commands\DicomCommand.cs" />
+    <Compile Include="Commands\DicomCommandResult.cs" />
+    <Compile Include="Commands\IStoreCommand.cs" />
+    <Compile Include="Commands\StoreCommandResult.cs" />
+    <Compile Include="IObjectIDQuery.cs" />
+    <Compile Include="ObjectQueryLevel.cs" />
+    <Compile Include="Query\DicomQueryServiceBase.cs" />
+    <Compile Include="Query\IDicomQueryService.cs" />
+    <Compile Include="Query\Models\ContextData.cs" />
+    <Compile Include="Query\Models\ContextDataSets.cs" />
+    <Compile Include="Query\ObjectArchieve\IObjectArchieveQueryService.cs" />
+    <Compile Include="Query\ObjectArchieve\ObjectArchieveResponseBuilder.cs" />
+    <Compile Include="Query\ObjectArchieve\ObjectArchieveQueryService.cs" />
+    <Compile Include="Retrieve\IObjectRetrieveDataService.cs" />
+    <Compile Include="Retrieve\ObjectRetrieveDataService.cs" />
+    <Compile Include="Storage\IObjectStoreDataService.cs" />
+    <Compile Include="Commands\ICommand.cs" />
+    <Compile Include="Storage\ObjectStoreService.cs" />
+    <Compile Include="Commands\StoreCommand.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Storage\StoreResult.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DICOMcloud.Core\DICOMcloud.Core.csproj">
+      <Project>{5627b6ef-610c-40c9-bdb2-6f4d77fcb23c}</Project>
+      <Name>DICOMcloud.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DICOMcloud.Dicom.DataAccess\DICOMcloud.Dicom.DataAccess.csproj">
+      <Project>{1b7c024b-f1b9-4b41-b6f9-fb26f7135ef0}</Project>
+      <Name>DICOMcloud.Dicom.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DICOMcloud.Dicom\DICOMcloud.Dicom.csproj">
+      <Project>{65ed8720-92ca-400f-b967-343e3e13df8b}</Project>
+      <Name>DICOMcloud.Dicom</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
