@@ -105,10 +105,6 @@
       <Project>{5627b6ef-610c-40c9-bdb2-6f4d77fcb23c}</Project>
       <Name>DICOMcloud.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DICOMcloud.Dicom.DataAccess\DICOMcloud.Dicom.DataAccess.csproj">
-      <Project>{1b7c024b-f1b9-4b41-b6f9-fb26f7135ef0}</Project>
-      <Name>DICOMcloud.Dicom.DataAccess</Name>
-    </ProjectReference>
     <ProjectReference Include="..\DICOMcloud.Dicom\DICOMcloud.Dicom.csproj">
       <Project>{65ed8720-92ca-400f-b967-343e3e13df8b}</Project>
       <Name>DICOMcloud.Dicom</Name>
