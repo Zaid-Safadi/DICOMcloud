@@ -1,4 +1,6 @@
 # DICOMcloud
+
+[![Join the chat at https://gitter.im/Zaid-Safadi/DICOMcloud](https://badges.gitter.im/Zaid-Safadi/DICOMcloud.svg)](https://gitter.im/Zaid-Safadi/DICOMcloud?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 DICOMcloud is an open source DICOMweb server that implements RESTful services in DICOM part 18
 
 
