@@ -1,7 +1,6 @@
 # DICOMcloud
-DICOMcloud is an open source DICOMweb server that implements RESTful services in DICOM part 13
+DICOMcloud is an open source DICOMweb server that implements RESTful services in DICOM part 18
 
-*Project code is still being uploaded. There are multuiple .NET projects involved in this and I am uploading as I get them ready...*
 
 # Demo
 I'm maintining an online version of the server currently hosted at: 
