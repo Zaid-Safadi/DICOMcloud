@@ -2,7 +2,7 @@
 ***
 # Announcement
 
-**The DICOMcloud project will be released under a new license (MIT) in its own GitHub Organization account. This repository is provided here for reference.**
+**The DICOMcloud project is moving to its [own GitHub Organization account)[https://github.com/DICOMcloud/DICOMcloud]. This repository is provided here for reference.**
 ***
 
 
